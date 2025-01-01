@@ -17,7 +17,7 @@ int main(){
             cin>>v[i];
         }
         sort(v.begin(),v.end());
-        cout<<"CASE# "<<t++<<'\n';
+        cout<<"CASE# "<<t++<<":\n";
         while(q--){
             int x;
             cin>>x;
@@ -25,6 +25,9 @@ int main(){
             while(l<=r){
                 int mid = (l+r)/2;
                 if(v[mid]==x){
+                    while(mid>0 && v[mid-1]==x){
+                        mid--;
+                    }
                     ans = mid;
                     break;
                 }
